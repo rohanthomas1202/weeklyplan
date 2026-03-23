@@ -1,0 +1,46 @@
+CREATE TABLE planning_week (
+    id BIGINT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+    user_id BIGINT NOT NULL REFERENCES app_user(id),
+    team_id BIGINT NOT NULL REFERENCES team(id),
+    week_start_date DATE NOT NULL,
+    week_end_date DATE NOT NULL,
+    status VARCHAR(32) NOT NULL DEFAULT 'DRAFT',
+    locked_at TIMESTAMPTZ,
+    blockers_summary TEXT,
+    manager_notes TEXT,
+    reconciling_at TIMESTAMPTZ,
+    reconciled_at TIMESTAMPTZ,
+    version INT NOT NULL DEFAULT 0,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+    UNIQUE (user_id, week_start_date)
+);
+
+CREATE TABLE weekly_commit (
+    id BIGINT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+    planning_week_id BIGINT NOT NULL REFERENCES planning_week(id),
+    title VARCHAR(255) NOT NULL,
+    description TEXT,
+    rally_cry_id BIGINT NOT NULL REFERENCES rally_cry(id),
+    defining_objective_id BIGINT NOT NULL REFERENCES defining_objective(id),
+    outcome_id BIGINT NOT NULL REFERENCES outcome(id),
+    chess_category_code VARCHAR(32) NOT NULL REFERENCES chess_category(code),
+    priority_rank INT NOT NULL,
+    stretch BOOLEAN NOT NULL DEFAULT FALSE,
+    source_commit_id BIGINT REFERENCES weekly_commit(id),
+    created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+    UNIQUE (planning_week_id, priority_rank)
+);
+
+CREATE TABLE weekly_commit_reconciliation (
+    id BIGINT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+    weekly_commit_id BIGINT NOT NULL UNIQUE REFERENCES weekly_commit(id),
+    disposition VARCHAR(32) NOT NULL,
+    actual_result TEXT,
+    percent_complete NUMERIC(5,2),
+    blocker_notes TEXT,
+    carry_forward BOOLEAN NOT NULL DEFAULT FALSE,
+    reconciliation_notes TEXT,
+    reconciled_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);
