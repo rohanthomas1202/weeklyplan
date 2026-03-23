@@ -1,6 +1,7 @@
 package com.weeklyplanning.domain.exception;
 
 import com.weeklyplanning.api.dto.ErrorResponse;
+import com.weeklyplanning.application.ManagerService;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -38,5 +39,11 @@ public class GlobalExceptionHandler {
     public ResponseEntity<ErrorResponse> handleIllegalArgument(IllegalArgumentException ex) {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST)
                 .body(new ErrorResponse("VALIDATION_ERROR", ex.getMessage()));
+    }
+
+    @ExceptionHandler(ManagerService.ManagerAccessDeniedException.class)
+    public ResponseEntity<ErrorResponse> handleManagerAccessDenied(ManagerService.ManagerAccessDeniedException ex) {
+        return ResponseEntity.status(HttpStatus.FORBIDDEN)
+                .body(new ErrorResponse("ACCESS_DENIED", ex.getMessage()));
     }
 }
