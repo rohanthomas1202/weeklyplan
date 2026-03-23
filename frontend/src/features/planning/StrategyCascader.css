@@ -1,0 +1,42 @@
+.strategy-cascader {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.strategy-cascader__field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.strategy-cascader__label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.strategy-cascader__select {
+  padding: 8px 10px;
+  border: 1px solid var(--border-input);
+  border-radius: 8px;
+  font-size: 14px;
+  color: var(--text-primary);
+  background: var(--bg-input);
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.15s;
+  width: 100%;
+  appearance: auto;
+}
+
+.strategy-cascader__select:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.strategy-cascader__select:disabled {
+  background: var(--bg-card-hover);
+  color: var(--text-tertiary);
+  cursor: not-allowed;
+}

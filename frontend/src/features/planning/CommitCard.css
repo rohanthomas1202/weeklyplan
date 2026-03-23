@@ -1,0 +1,175 @@
+.commit-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-default);
+  border-radius: 12px;
+  padding: 14px 16px;
+  position: relative;
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.commit-card:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transform: translateY(-1px);
+}
+
+.commit-card__rank {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  border-radius: 8px;
+  background: var(--bg-card-hover);
+  color: var(--text-secondary);
+  font-size: 13px;
+  font-weight: 600;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.commit-card__body {
+  flex: 1;
+  min-width: 0;
+}
+
+.commit-card__top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 6px;
+}
+
+.commit-card__title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.commit-card__stretch {
+  font-size: 11px;
+  font-weight: 600;
+  color: #7c3aed;
+  background: #ede9fe;
+  padding: 2px 7px;
+  border-radius: 10px;
+}
+
+[data-theme="dark"] .commit-card__stretch {
+  color: #d8b4fe;
+  background: #4c1d6e;
+}
+
+.commit-card__rcdo {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+.commit-card__rcdo-icon {
+  font-size: 12px;
+}
+
+.commit-card__rcdo-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 500;
+  background: var(--bg-card-hover);
+  color: var(--text-primary);
+  max-width: 220px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.commit-card__rcdo-arrow {
+  color: var(--text-tertiary);
+  font-size: 11px;
+}
+
+.commit-card__menu-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 6px;
+  color: var(--text-secondary);
+  font-size: 18px;
+  line-height: 1;
+  flex-shrink: 0;
+  align-self: flex-start;
+  transition: background 0.15s;
+}
+
+.commit-card__menu-btn:hover {
+  background: var(--bg-card-hover);
+  color: var(--text-primary);
+}
+
+.commit-card__menu-wrapper {
+  position: relative;
+}
+
+.commit-card__menu-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: var(--bg-card);
+  border: 1px solid var(--border-default);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.10);
+  min-width: 130px;
+  z-index: 100;
+  overflow: hidden;
+  margin-top: 4px;
+  animation: dropdown-fade-in 0.15s ease;
+}
+
+@keyframes dropdown-fade-in {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.commit-card__menu-item {
+  display: block;
+  width: 100%;
+  padding: 9px 14px;
+  text-align: left;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 13px;
+  color: var(--text-primary);
+  transition: background 0.12s;
+}
+
+.commit-card__menu-item:hover {
+  background: var(--bg-card-hover);
+}
+
+.commit-card__menu-item--danger {
+  color: #dc2626;
+}
+
+.commit-card__menu-item--danger:hover {
+  background: #fee2e2;
+}
+
+[data-theme="dark"] .commit-card__menu-item--danger:hover {
+  background: #5c1a1a;
+}
+
+.commit-card--dragging {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  border-color: #93c5fd;
+  opacity: 0.85;
+}

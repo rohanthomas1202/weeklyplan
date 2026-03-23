@@ -1,0 +1,35 @@
+.week-summary-bar {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  background: var(--bg-card);
+  border: 1px solid var(--border-default);
+  border-radius: 12px;
+  padding: 12px 20px;
+  margin-top: 16px;
+}
+
+.week-summary-bar__stat {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--text-primary);
+}
+
+.week-summary-bar__label {
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.week-summary-bar__value {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.week-summary-bar__divider {
+  width: 1px;
+  height: 18px;
+  background: var(--border-default);
+}

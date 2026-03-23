@@ -1,0 +1,214 @@
+.reconciliation-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.reconciliation-page__header {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.reconciliation-page__title {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.reconciliation-page__subtitle {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* Loading / error */
+.reconciliation-page__loading,
+.reconciliation-page__error {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--text-secondary);
+  font-size: 15px;
+}
+
+.reconciliation-page__loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.reconciliation-page__spinner {
+  width: 32px;
+  height: 32px;
+  border: 3px solid var(--border-default);
+  border-top-color: var(--color-primary);
+  border-radius: 50%;
+  animation: rp-spin 0.7s linear infinite;
+}
+
+@keyframes rp-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Locked state */
+.reconciliation-page__locked {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-default);
+  border-radius: 12px;
+  padding: 40px 24px;
+  text-align: center;
+}
+
+.reconciliation-page__locked-text {
+  font-size: 15px;
+  color: var(--text-secondary);
+  margin: 0;
+  max-width: 480px;
+}
+
+/* Summary section */
+.reconciliation-page__summary {
+  background: var(--bg-card);
+  border: 1px solid var(--border-default);
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.reconciliation-page__summary-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 4px;
+}
+
+.reconciliation-page__summary-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.reconciliation-page__summary-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.reconciliation-page__summary-textarea {
+  padding: 10px 12px;
+  border: 1px solid var(--border-input);
+  border-radius: 8px;
+  font-size: 14px;
+  color: var(--text-primary);
+  background: var(--bg-input);
+  outline: none;
+  resize: vertical;
+  font-family: inherit;
+  line-height: 1.5;
+  transition: border-color 0.15s;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.reconciliation-page__summary-textarea:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.1);
+}
+
+.reconciliation-page__summary-text {
+  font-size: 14px;
+  color: var(--text-primary);
+  margin: 0;
+  line-height: 1.5;
+  background: var(--bg-page);
+  border-radius: 8px;
+  padding: 10px 12px;
+  border: 1px solid var(--border-default);
+}
+
+.reconciliation-page__summary-empty {
+  font-size: 13px;
+  color: var(--text-tertiary);
+  font-style: italic;
+  margin: 0;
+}
+
+/* Submit / action area */
+.reconciliation-page__submit {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Reflect on Your Week highlighted section */
+.reconciliation-page__summary--reflect {
+  background: var(--bg-section-highlight);
+  border-color: #bae6fd;
+}
+
+.reconciliation-page__summary--reflect .reconciliation-page__summary-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #0c4a6e;
+  margin: 0 0 4px;
+}
+
+[data-theme="dark"] .reconciliation-page__summary--reflect {
+  border-color: #1e3a5f;
+}
+
+[data-theme="dark"] .reconciliation-page__summary--reflect .reconciliation-page__summary-title {
+  color: #93c5fd;
+}
+
+/* Modal description text */
+.reconciliation-page__modal-description {
+  font-size: 14px;
+  color: var(--text-primary);
+  margin: 0 0 16px;
+  line-height: 1.5;
+}
+
+/* Carry-forward item list in modal */
+.reconciliation-page__carry-list {
+  list-style: none;
+  margin: 0 0 20px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.reconciliation-page__carry-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  background: var(--bg-card-hover);
+  border: 1px solid var(--border-default);
+  border-radius: 8px;
+}
+
+.reconciliation-page__carry-title {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-primary);
+  line-height: 1.4;
+}
+
+/* Modal action buttons */
+.reconciliation-page__modal-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}

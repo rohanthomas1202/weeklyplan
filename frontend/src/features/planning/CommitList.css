@@ -1,0 +1,15 @@
+.commit-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.commit-list__empty {
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--text-secondary);
+  font-size: 14px;
+  background: var(--bg-card);
+  border: 1px dashed var(--border-input);
+  border-radius: 12px;
+}

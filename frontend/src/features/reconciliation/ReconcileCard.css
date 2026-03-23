@@ -1,0 +1,256 @@
+.reconcile-card {
+  display: flex;
+  gap: 0;
+  background: var(--bg-card);
+  border: 1px solid var(--border-default);
+  border-left: 4px solid var(--border-input);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: box-shadow 0.15s;
+}
+
+.reconcile-card:hover {
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.06);
+}
+
+/* Unreconciled state */
+.reconcile-card--unreconciled {
+  border-left-color: #f59e0b;
+}
+
+/* Disposition border colors */
+.reconcile-card--completed {
+  border-left-color: #16a34a;
+}
+
+.reconcile-card--partial {
+  border-left-color: #d97706;
+}
+
+.reconcile-card--not-completed {
+  border-left-color: #dc2626;
+}
+
+.reconcile-card--carried-forward {
+  border-left-color: #2563eb;
+}
+
+.reconcile-card--dropped {
+  border-left-color: #9ca3af;
+}
+
+/* Planned panel */
+.reconcile-card__planned {
+  flex: 1;
+  min-width: 0;
+  padding: 16px;
+  border-right: 1px solid var(--border-default);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.reconcile-card__planned-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.reconcile-card__rank {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  background: var(--bg-card-hover);
+  padding: 2px 7px;
+  border-radius: 8px;
+}
+
+.reconcile-card__title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.4;
+}
+
+.reconcile-card__stretch {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  color: #7c3aed;
+  background: #ede9fe;
+  padding: 2px 7px;
+  border-radius: 10px;
+}
+
+[data-theme="dark"] .reconcile-card__stretch {
+  color: #d8b4fe;
+  background: #4c1d6e;
+}
+
+.reconcile-card__rcdo {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex-wrap: wrap;
+  margin-top: 2px;
+}
+
+.reconcile-card__rcdo-icon {
+  font-size: 11px;
+}
+
+.reconcile-card__rcdo-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 500;
+  background: var(--bg-card-hover);
+  color: var(--text-primary);
+  max-width: 160px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.reconcile-card__rcdo-arrow {
+  color: var(--text-tertiary);
+  font-size: 11px;
+}
+
+/* Actual panel */
+.reconcile-card__actual {
+  flex: 1;
+  min-width: 0;
+  padding: 16px;
+}
+
+/* Read-only display */
+.reconcile-card__readonly {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.reconcile-card__readonly-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.reconcile-card__readonly-row--block {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3px;
+}
+
+.reconcile-card__readonly-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  flex-shrink: 0;
+}
+
+.reconcile-card__readonly-value {
+  font-size: 13px;
+  color: var(--text-primary);
+  line-height: 1.4;
+}
+
+/* Disposition badges in read-only mode */
+.reconcile-card__disposition-badge {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 12px;
+}
+
+.reconcile-card__disposition-badge--completed {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.reconcile-card__disposition-badge--partially-completed {
+  background: #fef3c7;
+  color: #b45309;
+}
+
+.reconcile-card__disposition-badge--not-completed {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.reconcile-card__disposition-badge--carried-forward {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.reconcile-card__disposition-badge--dropped {
+  background: #f3f4f6;
+  color: #6b7280;
+}
+
+[data-theme="dark"] .reconcile-card__disposition-badge--completed {
+  background: #1a4d2e;
+  color: #86efac;
+}
+
+[data-theme="dark"] .reconcile-card__disposition-badge--partially-completed {
+  background: #5c4b1a;
+  color: #fde68a;
+}
+
+[data-theme="dark"] .reconcile-card__disposition-badge--not-completed {
+  background: #5c1a1a;
+  color: #fca5a5;
+}
+
+[data-theme="dark"] .reconcile-card__disposition-badge--carried-forward {
+  background: #1e3a5f;
+  color: #93c5fd;
+}
+
+[data-theme="dark"] .reconcile-card__disposition-badge--dropped {
+  background: #374151;
+  color: #d1d5db;
+}
+
+.reconcile-card__carry-tag {
+  font-size: 11px;
+  font-weight: 600;
+  color: #1d4ed8;
+  background: #dbeafe;
+  padding: 2px 8px;
+  border-radius: 10px;
+}
+
+[data-theme="dark"] .reconcile-card__carry-tag {
+  color: #93c5fd;
+  background: #1e3a5f;
+}
+
+.reconcile-card__no-recon {
+  font-size: 13px;
+  color: var(--text-tertiary);
+  font-style: italic;
+}
+
+/* Completion checkmark */
+.reconcile-card__checkmark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #16a34a;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  margin-left: auto;
+  flex-shrink: 0;
+}

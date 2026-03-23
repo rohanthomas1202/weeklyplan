@@ -1,0 +1,95 @@
+.chess-category-picker {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.chess-category-picker__btn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 2px solid var(--border-default);
+  background: var(--bg-card);
+  cursor: pointer;
+  text-align: left;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.chess-category-picker__btn:hover {
+  background: var(--bg-card-hover);
+}
+
+.chess-category-picker__btn--selected-KING {
+  border-color: #2563eb;
+  background: #eff6ff;
+}
+
+.chess-category-picker__btn--selected-QUEEN {
+  border-color: #dc2626;
+  background: #fff5f5;
+}
+
+.chess-category-picker__btn--selected-ROOK {
+  border-color: #eab308;
+  background: #fefce8;
+}
+
+.chess-category-picker__btn--selected-BISHOP {
+  border-color: #16a34a;
+  background: #f0fdf4;
+}
+
+.chess-category-picker__btn--selected-KNIGHT {
+  border-color: #a855f7;
+  background: #faf5ff;
+}
+
+.chess-category-picker__btn--selected-PAWN {
+  border-color: #6b7280;
+  background: var(--bg-card-hover);
+}
+
+[data-theme="dark"] .chess-category-picker__btn--selected-KING {
+  border-color: #3b82f6;
+  background: #1e3a5f;
+}
+
+[data-theme="dark"] .chess-category-picker__btn--selected-QUEEN {
+  border-color: #f87171;
+  background: #5c1a1a;
+}
+
+[data-theme="dark"] .chess-category-picker__btn--selected-ROOK {
+  border-color: #fbbf24;
+  background: #5c4b1a;
+}
+
+[data-theme="dark"] .chess-category-picker__btn--selected-BISHOP {
+  border-color: #4ade80;
+  background: #1a4d2e;
+}
+
+[data-theme="dark"] .chess-category-picker__btn--selected-KNIGHT {
+  border-color: #c084fc;
+  background: #4c1d6e;
+}
+
+[data-theme="dark"] .chess-category-picker__btn--selected-PAWN {
+  border-color: #9ca3af;
+  background: #374151;
+}
+
+.chess-category-picker__name {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.chess-category-picker__desc {
+  font-size: 11px;
+  color: var(--text-secondary);
+  line-height: 1.3;
+}

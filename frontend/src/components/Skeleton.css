@@ -1,0 +1,32 @@
+.skeleton-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.skeleton-card {
+  background: var(--bg-card, #ffffff);
+  border: 1px solid var(--border-default, #e5e7eb);
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.skeleton-line {
+  height: 14px;
+  border-radius: 4px;
+  background: linear-gradient(90deg, var(--border-default, #e5e7eb) 25%, var(--bg-card-hover, #f9fafb) 50%, var(--border-default, #e5e7eb) 75%);
+  background-size: 200% 100%;
+  animation: skeleton-shimmer 1.5s infinite;
+}
+
+.skeleton-line--short { width: 30%; }
+.skeleton-line--medium { width: 60%; }
+.skeleton-line--long { width: 90%; }
+
+@keyframes skeleton-shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}

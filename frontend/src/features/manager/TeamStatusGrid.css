@@ -1,0 +1,116 @@
+.team-grid {
+  background: var(--bg-card);
+  border: 1px solid var(--border-default);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.team-grid__table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.team-grid__head-row {
+  background: var(--bg-card-hover);
+  border-bottom: 1px solid var(--border-default);
+}
+
+.team-grid__th {
+  padding: 11px 16px;
+  text-align: left;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+.team-grid__th--right {
+  text-align: right;
+}
+
+.team-grid__row {
+  border-bottom: 1px solid var(--border-default);
+  transition: background 0.12s;
+}
+
+.team-grid__row:last-child {
+  border-bottom: none;
+}
+
+.team-grid__row--clickable {
+  cursor: pointer;
+}
+
+.team-grid__row--clickable:hover {
+  background: var(--bg-card-hover);
+}
+
+.team-grid__td {
+  padding: 13px 16px;
+  font-size: 14px;
+  color: var(--text-primary);
+  vertical-align: middle;
+}
+
+.team-grid__td--name {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.team-grid__td--right {
+  text-align: right;
+}
+
+.team-grid__not-started {
+  font-size: 12px;
+  color: var(--text-tertiary);
+  font-style: italic;
+}
+
+.team-grid__commit-count {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+  background: var(--bg-card-hover);
+  padding: 2px 8px;
+  border-radius: 8px;
+}
+
+.team-grid__loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 60px 20px;
+  color: var(--text-secondary);
+  font-size: 15px;
+}
+
+.team-grid__spinner {
+  width: 28px;
+  height: 28px;
+  border: 3px solid var(--border-default);
+  border-top-color: var(--color-primary);
+  border-radius: 50%;
+  animation: tg-spin 0.7s linear infinite;
+}
+
+@keyframes tg-spin {
+  to { transform: rotate(360deg); }
+}
+
+.team-grid__error {
+  text-align: center;
+  padding: 40px 20px;
+  color: #dc2626;
+  font-size: 14px;
+}
+
+.team-grid__empty {
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--text-tertiary);
+  font-size: 14px;
+}

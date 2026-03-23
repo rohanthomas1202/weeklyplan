@@ -1,0 +1,124 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+/* Chess category colors */
+.badge--chess-king {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.badge--chess-queen {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.badge--chess-rook {
+  background: #fef3c7;
+  color: #b45309;
+}
+
+.badge--chess-bishop {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.badge--chess-knight {
+  background: #ede9fe;
+  color: #6d28d9;
+}
+
+.badge--chess-pawn {
+  background: #f3f4f6;
+  color: #4b5563;
+}
+
+/* Status colors */
+.badge--status-draft {
+  background: #fef3c7;
+  color: #b45309;
+}
+
+.badge--status-locked {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.badge--status-reconciling {
+  background: #ffedd5;
+  color: #c2410c;
+}
+
+.badge--status-reconciled {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.badge--default {
+  background: #f3f4f6;
+  color: #4b5563;
+}
+
+/* Dark mode overrides — chess categories */
+[data-theme="dark"] .badge--chess-king {
+  background: #1e3a5f;
+  color: #93c5fd;
+}
+
+[data-theme="dark"] .badge--chess-queen {
+  background: #5c1a1a;
+  color: #fca5a5;
+}
+
+[data-theme="dark"] .badge--chess-rook {
+  background: #5c4b1a;
+  color: #fde68a;
+}
+
+[data-theme="dark"] .badge--chess-bishop {
+  background: #1a4d2e;
+  color: #86efac;
+}
+
+[data-theme="dark"] .badge--chess-knight {
+  background: #4c1d6e;
+  color: #d8b4fe;
+}
+
+[data-theme="dark"] .badge--chess-pawn {
+  background: #374151;
+  color: #d1d5db;
+}
+
+/* Dark mode overrides — status badges */
+[data-theme="dark"] .badge--status-draft {
+  background: #5c4b1a;
+  color: #fde68a;
+}
+
+[data-theme="dark"] .badge--status-locked {
+  background: #1e3a5f;
+  color: #93c5fd;
+}
+
+[data-theme="dark"] .badge--status-reconciling {
+  background: #5c2e1a;
+  color: #fdba74;
+}
+
+[data-theme="dark"] .badge--status-reconciled {
+  background: #1a4d2e;
+  color: #86efac;
+}
+
+[data-theme="dark"] .badge--default {
+  background: #374151;
+  color: #d1d5db;
+}

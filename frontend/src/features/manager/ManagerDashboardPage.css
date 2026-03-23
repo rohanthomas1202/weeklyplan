@@ -1,0 +1,28 @@
+.manager-dashboard {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.manager-dashboard__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.manager-dashboard__title {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.manager-dashboard__denied {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--text-secondary);
+  font-size: 15px;
+}

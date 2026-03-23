@@ -32,6 +32,15 @@ public class UserContextFilter implements Filter {
             return;
         }
 
+        // Allow unauthenticated access to user list and chess categories (needed for user switcher)
+        if (path.equals("/api/users") || path.equals("/api/chess-categories")) {
+            String userIdHeader = httpRequest.getHeader("X-User-Id");
+            if (userIdHeader == null || userIdHeader.isBlank()) {
+                chain.doFilter(request, response);
+                return;
+            }
+        }
+
         String userIdHeader = httpRequest.getHeader("X-User-Id");
         if (userIdHeader == null || userIdHeader.isBlank()) {
             writeError(httpResponse, HttpServletResponse.SC_UNAUTHORIZED,
