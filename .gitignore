@@ -1,6 +1,7 @@
 # Backend
 backend/build/
 backend/.gradle/
+backend/bin/
 *.class
 *.jar
 !backend/gradle/wrapper/gradle-wrapper.jar
@@ -13,12 +14,25 @@ frontend/dist/
 .idea/
 .vscode/
 *.iml
+*.swp
+*.swo
+*~
 
 # OS
 .DS_Store
+Thumbs.db
 
-# Data
+# Docker
 pgdata/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Logs
+*.log
+/tmp/
 
 # Superpowers
 .superpowers/
